@@ -99,8 +99,8 @@ public class SigAndCodAspectBased {
             String methodCode = methodInfoTableModel.getMethodCode();
 
             long startTime = System.currentTimeMillis();
-            // search without limiting K and sort by code similarity
-            Map<String, Double> topKMethodIdAndCodSimMap = sumBasedSearchLimitKAndEHSortByCodSim(methodInfoTableModel, methodCode);
+            // search limiting K and sort by code similarity
+            Map<String, Double> topKMethodIdAndCodSimMap = sigBasedSearchLimitKAndEHSortByCodSim(methodInfoTableModel, methodCode);
 
             long endTime = System.currentTimeMillis();
             long costTime = endTime - startTime;
@@ -159,7 +159,7 @@ public class SigAndCodAspectBased {
      * @date 2020/8/21 21:27
      * @author xxx
      */
-    public Map<String, Double> sumBasedSearchLimitKAndEHSortByCodSim(MethodInfoTableModel methodInfoTableModel
+    public Map<String, Double> sigBasedSearchLimitKAndEHSortByCodSim(MethodInfoTableModel methodInfoTableModel
             , String methodCode) {
         String className = methodInfoTableModel.getClassName();
         String methodName = methodInfoTableModel.getMethodName();
@@ -357,7 +357,7 @@ public class SigAndCodAspectBased {
      * @date 2020/8/21 21:27
      * @author xxx
      */
-    public Map<String, Double> sumBasedSearchAndEHSortByCodSim(MethodInfoTableModel methodInfoTableModel, String methodCode) {
+    public Map<String, Double> sigBasedSearchAndEHSortByCodSim(MethodInfoTableModel methodInfoTableModel, String methodCode) {
         String className = methodInfoTableModel.getClassName();
         String methodName = methodInfoTableModel.getMethodName();
         String signature = methodInfoTableModel.getSignature();

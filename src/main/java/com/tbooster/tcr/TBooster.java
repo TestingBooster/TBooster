@@ -93,7 +93,7 @@ public class TBooster {
             // begin search
             long startTime = System.currentTimeMillis();
             // Step 1: SumBasedSearch.
-            Map<String, Double> topKMethodWithMSIdAndCodSimMap = sigAndCodAspectBased.sumBasedSearchAndEHSortByCodSim(methodInfoTableModel, methodCode);
+            Map<String, Double> topKMethodWithMSIdAndCodSimMap = sigAndCodAspectBased.sigBasedSearchAndEHSortByCodSim(methodInfoTableModel, methodCode);
             int topKMethodWithMSIdAndCodSimMapSize = topKMethodWithMSIdAndCodSimMap.size();
             if (topKMethodWithMSIdAndCodSimMapSize == k) {
                 long endTime = System.currentTimeMillis();

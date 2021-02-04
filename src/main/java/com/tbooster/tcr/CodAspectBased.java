@@ -177,8 +177,7 @@ public class CodAspectBased {
             methodIdCodeSimilarityMap = null;
 
 
-            pathStringBuffer.append(File.separator + "test_cases_recommended_by_CodBased_" + gapPercentage
-                    + "_" + threshold);
+            pathStringBuffer.append(File.separator + "test_cases_recommended_by_CodAspectBased");
             String recommendedTestCasesDirectoryPath = pathStringBuffer.toString();
             File recommendedTestCasesDirectory = new File(recommendedTestCasesDirectoryPath);
             if (!recommendedTestCasesDirectory.exists()) {
@@ -206,15 +205,14 @@ public class CodAspectBased {
             mutFile = null;
         }
 
-        String compareTimesFilePath = searchQueryDirectory + File.separator + "compare_times_CodBased_"
-                + gapPercentage + "_" + threshold + ".json";
+        String compareTimesFilePath = searchQueryDirectory + File.separator + "compare_times_CodAspectBased.json";
         String compareTimesMapJsonString = jacksonUtil.bean2Json(compareTimesMap);
         FileUtil.writeStringToTargetFile(compareTimesMapJsonString, compareTimesFilePath);
         compareTimesFilePath = null;
         compareTimesMapJsonString = null;
 
         String queryCostTimeMapJsonString = jacksonUtil.bean2Json(queryCostTimeMap);
-        pathStringBuffer.append("cost_time_by_CodBased" + "_" + gapPercentage + "_" + threshold + ".json");
+        pathStringBuffer.append("cost_time_by_CodAspectBased.json");
         String costTimeFilePath = pathStringBuffer.toString();
         FileUtil.writeStringToTargetFile(queryCostTimeMapJsonString, costTimeFilePath);
         costTimeFilePath = null;

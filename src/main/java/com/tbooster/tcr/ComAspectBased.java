@@ -112,7 +112,7 @@ public class ComAspectBased {
             queryCostTimeMap.put(queryDirectoryName, costTime);
 
             if (!topKMethodIdAndSimilarityMap.isEmpty()) {
-                pathStringBuffer.append(File.separator + "test_cases_recommended_by_ComBased" + "_" + threshold + "-1.0");
+                pathStringBuffer.append(File.separator + "test_cases_recommended_by_ComAspectBased");
                 String recommendedResultDirectoryPath = pathStringBuffer.toString();
                 File recommendedTestCasesDirectory = new File(recommendedResultDirectoryPath);
                 if (!recommendedTestCasesDirectory.exists()) {
@@ -141,7 +141,7 @@ public class ComAspectBased {
         }
 
         String queryCostTimeMapJsonString = jacksonUtil.bean2Json(queryCostTimeMap);
-        pathStringBuffer.append("cost_time_by_ComBased_" + threshold + "-1.0" + ".json");
+        pathStringBuffer.append("cost_time_by_ComAspectBased.json");
         String costTimeFilePath = pathStringBuffer.toString();
         FileUtil.writeStringToTargetFile(queryCostTimeMapJsonString, costTimeFilePath);
 
